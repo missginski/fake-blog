@@ -45,3 +45,13 @@ hr {
 .nav-item:hover .nav-link {
     color: #f78181;
 }*/
+
+.my-btn:hover,
+.my-btn:focus,
+.my-btn:active,
+.my-btn.active,
+.open>.dropdown-toggle.my-btn {
+	border: solid 1px #e54b44;
+	background: #e54b44;
+	box-shadow: none;
+}
