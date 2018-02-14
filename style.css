@@ -45,3 +45,9 @@ hr {
 .nav-item:hover .nav-link {
     color: #f78181;
 }*/
+
+
+.carousel-item {
+	width: 701px;
+	height: 439px;
+}
