@@ -103,6 +103,13 @@ hr {
 	padding-bottom: 1.8rem;
 }
 
+.card-text {
+	font-family: OpenSans;
+	font-size: 0.874em;
+	line-height: 1.43;
+	color: #9a9a9a;
+}
+
 .top-stories .card {
 	max-width: 450px;
 	height: auto;
@@ -174,6 +181,12 @@ section {
 .popular img {
 	max-width: 300px;
 	height: auto;
+	/*max-width: 300px;
+	height: 180px;*/
+}
+
+.popular .card-text {
+	padding: 2rem 0;
 }
 
 .popular .row {
