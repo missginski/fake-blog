@@ -1,37 +1,55 @@
-let rss_key = config.API_KEY;
-
+let api_key = config.API_KEY;
 
 function parseRSS(url) {
 	$.ajax({
-		type: 'GET',
-		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url),
+		method: 'GET',
+		dataType: 'json',
+		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
 		success: function(data){
-			console.log(data)
+			if (data.status != 'ok'){
+				throw data.message;
+			}
+			getArticles(data)
+			// console.log(data)
 		}
 	});
 }
 
-parseRSS('http://feeds.feedburner.com/CssTricks')
+getArticles = function(data) {
+	let articles = data.items;
+	let myData = {};
+	let myArticles = [];
+
+
+	$.each(articles, function(i, article){
+		for (var i in articles){
+			var item = articles[i];
+			myData.title = item.title;
+			myData.link = item.link;
+			myData.pubDate = item.pubDate;
+			myData.img = item.enclosure.link;
+			myData.desc = item.content;
+			myData.thumbnail = item.thumbnail;
+		}
+		let myArticle = myData[i];
+		myArticles.push(myArticle);
+
+	})
+	showArticles(myArticles)
+}
 
 
 
-$.ajax({
-	url: 'https://api.rss2json.com/v1/api.json',
-	method: 'GET',
-	dataType: 'json',
-	data: {
-		rss_url: 'https://www.theverge.com/culture/rss/index.xml',
-		api_key: rss_key,
-		count: 2
-	}
-}).done(function (response) {
-	if (response.status != 'ok'){
-		throw response.message;
-	}
-	console.log('====== ' + response.feed.title + ' ======');
+showArticles = function(myData){
+	console.log(myData);
+}
 
-	for (var i in response.items){
-		var item = response.items[i];
-		console.log(item.title)
-	}
-});
+parseRSS('https://www.vice.com/en_us/rss/');
+
+
+
+
+
+
+
+// select the html elements that will use them and append
