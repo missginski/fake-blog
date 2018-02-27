@@ -14,7 +14,7 @@ function parseRSS(url) {
 	});
 }
 
-parseRSS('https://feeds.theguardian.com/theguardian/uk/rss');
+// parseRSS('http://nypost.com/tech/feed/');
 
 getArticles = function(response) {
 	let articles = response.items;
@@ -27,36 +27,34 @@ getArticles = function(response) {
 		this.desc = newDesc;
 		this.thumbnail = newThumbnail;
 	}
-	for (let i = 0; i <= 3; i++){
-		let article = articles[i];
-		let myData = new NewData(article.title, article.link, article.pubDate, article.enclosure.link, article.content, article.thumbnail);
-		myArticles.push(myData);
-	}
+	$.each(articles, function(i, eachArticle){
+		let myData = new NewData(eachArticle.title, eachArticle.link, eachArticle.pubDate, eachArticle.enclosure.link, eachArticle.content, eachArticle.thumbnail);
+		myArticles.push(myData)
+	})
 	showArticles(myArticles)
 }
 
 showArticles = function(myArticles){
-	// console.log(myArticles)
+	let carItem = $('.carousel-item')
 	let carImg = $('.carousel-item img');
 	let carTitle = $('.carousel-item a');
-	let carSource = $('.carousel-item p');
-
+	let carDate = $('.carousel-item p')
 	$.each(myArticles, function(i, eachArticle){
-		// console.log(eachArticle)
 		let title = eachArticle.title;
 		let link = eachArticle.link;
 		let img = eachArticle.img;
+		// let date = eachArticle.pubDate;
 
-		$('carImg').each(function(i){
-			$('carImg').attr('src', img)
-			console.log(i)
-		})
-
-		// listTitle.text(title);
-		// listLink.attr('src', link);
-		// listImg.attr('src', img);
-		// console.log(title, link, img)
+		$(carImg[i]).attr('src', img);
+		$(carTitle[i]).attr('src', link).text(title);
+		// $(carDate[i]).text(date);
 	})
-
-	// console.log(title, link, img)
 }
+
+
+showCarouselItems = function(){
+	parseRSS('http://nypost.com/tech/feed/');
+
+}
+
+showCarouselItems()
