@@ -9,12 +9,47 @@ function parseRSS(url) {
 			if (response.status != 'ok'){
 				throw response.message;
 			}
-			getArticles(response)
+			// showTopStories(response)
+			// showArticles(response)
+			return response
 		}
 	});
 }
 
-// parseRSS('http://nypost.com/tech/feed/');
+
+
+// let thisData = {
+//   "header": "this is my header",
+//   "items": [
+//       {"name": "red", "first": true, "url": "#Red"},
+//       {"name": "green", "link": true, "url": "#Green"},
+//       {"name": "blue", "link": true, "url": "#Blue"}
+//   ],
+//   "empty": true
+// }
+
+function showTopStories() {
+	parseRSS('http://nypost.com/tech/feed/');
+	console.log(response)
+	let articles = response.items;
+
+	// var template = $('#top-stories-tpl').html();
+	// var html = Mustache.to_html(template, myArticles);
+	// $('#carousel').html(html);
+
+
+  var template = $('#ideal-template').html();
+  Mustache.parse(template);   // optional, speeds up future uses
+  // var rendered = Mustache.render(template, {name: "Luke"});
+	var rendered = Mustache.render(template, thisData);
+  $('#carousel').html(rendered);
+}
+
+showTopStories()
+
+
+
+
 
 getArticles = function(response) {
 	let articles = response.items;
@@ -30,31 +65,27 @@ getArticles = function(response) {
 	$.each(articles, function(i, eachArticle){
 		let myData = new NewData(eachArticle.title, eachArticle.link, eachArticle.pubDate, eachArticle.enclosure.link, eachArticle.content, eachArticle.thumbnail);
 		myArticles.push(myData)
+		// if (i === ii) {
+		// 	return false;
+		// }
 	})
-	showArticles(myArticles)
+	// showArticles(myArticles)
 }
 
 showArticles = function(myArticles){
-	let carItem = $('.carousel-item')
-	let carImg = $('.carousel-item img');
-	let carTitle = $('.carousel-item a');
-	let carDate = $('.carousel-item p')
-	$.each(myArticles, function(i, eachArticle){
-		let title = eachArticle.title;
-		let link = eachArticle.link;
-		let img = eachArticle.img;
-		// let date = eachArticle.pubDate;
-
-		$(carImg[i]).attr('src', img);
-		$(carTitle[i]).attr('src', link).text(title);
-		// $(carDate[i]).text(date);
-	})
+	// let carItem = $('.carousel-item')
+	// let carImg = $('.carousel-item img');
+	// let carTitle = $('.carousel-item a');
+	// let carDate = $('.carousel-item p')
+	// $.each(myArticles, function(i, eachArticle){
+	// 	let title = eachArticle.title;
+	// 	let link = eachArticle.link;
+	// 	let img = eachArticle.img;
+	// 	// let date = eachArticle.pubDate;
+	//
+	// 	$(carImg[i]).attr('src', img);
+	// 	$(carTitle[i]).attr('src', link).text(title);
+	// 	// $(carDate[i]).text(date);
+	// })
+	console.log(myArticles)
 }
-
-
-showCarouselItems = function(){
-	parseRSS('http://nypost.com/tech/feed/');
-
-}
-
-showCarouselItems()
