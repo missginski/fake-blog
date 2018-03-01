@@ -9,40 +9,46 @@ function parseRSS(url) {
 			if (response.status != 'ok'){
 				throw response.message;
 			}
-			// showTopStories(response)
+			showTopStories(response)
 			// showArticles(response)
-			return response
+			// return response
+			console.log(response)
 		}
 	});
 }
+// parseRSS('http://nypost.com/tech/feed/');
+
+var obj = {
+	 articles : [
+		{
+			title: "Jeff Zucker joins fight to monetize mobile journalism",
+			link: "https://nypost.com/2018/02/26/jeff-zucker-joins-fight-to-monetize-mobile-journalism/",
+			img: "http://thenypost.files.wordpress.com/2018/02/afp_11a95l.jpg?quality=90&amp;strip=all"
+		},
+		{
+			title: "Ford to test self-driving pizza delivery with Domino’s",
+			link: "https://nypost.com/2018/02/27/ford-to-test-self-driving-pizza-delivery-with-dominos/",
+			img: "http://thenypost.files.wordpress.com/2018/02/ford-self-driving-car.jpg?quality=90&amp;strip=all"
+		}
+	]
+};
+
+// var obj = {
+// 			title: "Jeff Zucker joins fight to monetize mobile journalism",
+// 			link: "https://nypost.com/2018/02/26/jeff-zucker-joins-fight-to-monetize-mobile-journalism/",
+// 			img: "http://thenypost.files.wordpress.com/2018/02/afp_11a95l.jpg?quality=90&amp;strip=all"
+// 		}
 
 
-
-// let thisData = {
-//   "header": "this is my header",
-//   "items": [
-//       {"name": "red", "first": true, "url": "#Red"},
-//       {"name": "green", "link": true, "url": "#Green"},
-//       {"name": "blue", "link": true, "url": "#Blue"}
-//   ],
-//   "empty": true
-// }
+// console.log(JSON.stringify(obj));
 
 function showTopStories() {
-	parseRSS('http://nypost.com/tech/feed/');
-	console.log(response)
-	let articles = response.items;
 
-	// var template = $('#top-stories-tpl').html();
-	// var html = Mustache.to_html(template, myArticles);
-	// $('#carousel').html(html);
+	let template = $('#aside-tmpl').html();
+	let html = Mustache.to_html(template, obj);
+	$('#aside').html(html);
 
-
-  var template = $('#ideal-template').html();
-  Mustache.parse(template);   // optional, speeds up future uses
-  // var rendered = Mustache.render(template, {name: "Luke"});
-	var rendered = Mustache.render(template, thisData);
-  $('#carousel').html(rendered);
+	// console.log(obj.articles)
 }
 
 showTopStories()
