@@ -33,28 +33,14 @@ var obj = {
 	]
 };
 
-// var obj = {
-// 			title: "Jeff Zucker joins fight to monetize mobile journalism",
-// 			link: "https://nypost.com/2018/02/26/jeff-zucker-joins-fight-to-monetize-mobile-journalism/",
-// 			img: "http://thenypost.files.wordpress.com/2018/02/afp_11a95l.jpg?quality=90&amp;strip=all"
-// 		}
-
-
 // console.log(JSON.stringify(obj));
 
 function showTopStories() {
-
 	let template = $('#aside-tmpl').html();
 	let html = Mustache.to_html(template, obj);
 	$('#aside').html(html);
-
-	// console.log(obj.articles)
 }
-
 showTopStories()
-
-
-
 
 
 getArticles = function(response) {
@@ -71,27 +57,8 @@ getArticles = function(response) {
 	$.each(articles, function(i, eachArticle){
 		let myData = new NewData(eachArticle.title, eachArticle.link, eachArticle.pubDate, eachArticle.enclosure.link, eachArticle.content, eachArticle.thumbnail);
 		myArticles.push(myData)
-		// if (i === ii) {
-		// 	return false;
-		// }
+		if (i === ii) {
+			return false;
+		}
 	})
-	// showArticles(myArticles)
-}
-
-showArticles = function(myArticles){
-	// let carItem = $('.carousel-item')
-	// let carImg = $('.carousel-item img');
-	// let carTitle = $('.carousel-item a');
-	// let carDate = $('.carousel-item p')
-	// $.each(myArticles, function(i, eachArticle){
-	// 	let title = eachArticle.title;
-	// 	let link = eachArticle.link;
-	// 	let img = eachArticle.img;
-	// 	// let date = eachArticle.pubDate;
-	//
-	// 	$(carImg[i]).attr('src', img);
-	// 	$(carTitle[i]).attr('src', link).text(title);
-	// 	// $(carDate[i]).text(date);
-	// })
-	console.log(myArticles)
 }
