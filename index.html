@@ -102,20 +102,20 @@
 	</section>
 
 	<script id="aside-tmpl" type="text/template">
-		{{#articles}}
+		{{#.}}
 		<div class="card text-white">
-			<img class="card-img img-fluid" src="{{img}}">
+			<img class="card-img img-fluid" src="{{thumbnail}}">
 			<div class="card-img-overlay">
 				<a href="{{link}}" class="text-white card-title">{{title}}</a>
 				<p class="source-info">Music   /   August 21 2017</p>
 			</div>
 		</div>
-		{{/articles}}
+		{{/.}}
 	</script>
 
 
 
-	<script id="top-tmpl" type="text/template">
+	<!-- <script id="top-tmpl" type="text/template">
 		{{#articles}}
 		<div class="carousel-item active">
 			<img src="{{img}}" class="img-fluid">
@@ -125,7 +125,7 @@
 			</div>
 		</div>
 		{{/articles}}
-	</script>
+	</script> -->
 
 	<section class="latest-stories">
 		<div class="container-fluid main-container col-md-12">

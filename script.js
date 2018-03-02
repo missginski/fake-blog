@@ -1,6 +1,6 @@
-let api_key = config.API_KEY;
+const api_key = config.API_KEY;
 
-function parseRSS(url) {
+function parseRSS(url, ii) {
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -9,14 +9,61 @@ function parseRSS(url) {
 			if (response.status != 'ok'){
 				throw response.message;
 			}
-			showTopStories(response)
-			// showArticles(response)
-			// return response
-			console.log(response)
+			handleResponse(response, ii)
+			return response
 		}
 	});
 }
-// parseRSS('http://nypost.com/tech/feed/');
+
+
+handleResponse = function(response, ii) {
+	let articles = response.items;
+	let myArticles = [];
+	$.each(articles, function(i, eachArticle){
+		myArticles.push(eachArticle)
+		if (i === ii) {
+			return false;
+		}
+		showTopStories(myArticles)
+		return myArticles
+	})
+}
+
+function showTopStories(myArticles) {
+	console.log(myArticles)
+	let template = $('#aside-tmpl').html();
+	let html = Mustache.to_html(template, myArticles);
+	$('#aside').html(html);
+}
+
+function renderFeeds() {
+	let asideStories = parseRSS('http://nypost.com/tech/feed/', 2);
+	console.log(asideStories)
+}
+
+renderFeeds()
+
+
+
+
+
+
+
+
+
+// function NewData(newTitle, newLink, newDate, newImg, newDesc, newThumbnail){
+// 	this.title = newTitle;
+// 	this.link = newLink;
+// 	this.pubDate = newDate;
+// 	this.img = newImg;
+// 	this.desc = newDesc;
+// 	this.thumbnail = newThumbnail;
+// }
+
+// let myData = new NewData(eachArticle.title, eachArticle.link, eachArticle.pubDate, eachArticle.enclosure.link, eachArticle.content, eachArticle.thumbnail);
+
+// console.log(JSON.stringify(obj));
+
 
 var obj = {
 	 articles : [
@@ -32,33 +79,3 @@ var obj = {
 		}
 	]
 };
-
-// console.log(JSON.stringify(obj));
-
-function showTopStories() {
-	let template = $('#aside-tmpl').html();
-	let html = Mustache.to_html(template, obj);
-	$('#aside').html(html);
-}
-showTopStories()
-
-
-getArticles = function(response) {
-	let articles = response.items;
-	let myArticles = [];
-	function NewData(newTitle, newLink, newDate, newImg, newDesc, newThumbnail){
-		this.title = newTitle;
-		this.link = newLink;
-		this.pubDate = newDate;
-		this.img = newImg;
-		this.desc = newDesc;
-		this.thumbnail = newThumbnail;
-	}
-	$.each(articles, function(i, eachArticle){
-		let myData = new NewData(eachArticle.title, eachArticle.link, eachArticle.pubDate, eachArticle.enclosure.link, eachArticle.content, eachArticle.thumbnail);
-		myArticles.push(myData)
-		if (i === ii) {
-			return false;
-		}
-	})
-}
