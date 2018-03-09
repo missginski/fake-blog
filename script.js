@@ -14,7 +14,6 @@ function renderAsideStories() {
 				if (i === 2){
 					return false;
 				}
-				// console.log(myArticles)
 				let template = $('#aside-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#aside').html(rendered);
@@ -38,7 +37,7 @@ function renderLatestStories() {
 				if (i === 3){
 					return false;
 				}
-				// console.log(myArticles)
+				console.log(myArticles)
 				let template = $('#latest-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#latest').html(rendered);

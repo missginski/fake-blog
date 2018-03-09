@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>the Siren</title>
+	<title>The Siren</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css">
@@ -89,15 +89,7 @@
 					</div>
 				</div>
 			</div>
-			<div id="aside" class="col-md-4 col">
-			<!-- <div class="card text-white">
-					<img class="card-img img-flud" src="images/slide2.png">
-					<div class="card-img-overlay">
-						<a href="#" class="text-white card-title">The SoundCloud You Loved Is Doomed</a>
-						<p class="source-info">Music   /   August 21 2017</p>
-					</div>
-				</div> -->
-			</div>
+			<div id="aside" class="col-md-4 col"></div>
 		</div>
 	</section>
 	<script id="aside-tmpl" type="text/template">
@@ -122,6 +114,13 @@
 		</div>
 		{{/articles}}
 	</script> -->
+
+	<section class="latest-stories">
+		<div class="container-fluid main-container col-md-12">
+			<h2 class="section-title">Latest Stories</h2>
+			<div id="latest" class="row"></div>
+		</div>
+	</section>
 	<script id="latest-tmpl" type="text/template">
 		{{#.}}
 		<div class="col-md-4">
@@ -137,31 +136,18 @@
 		{{/.}}
 	</script>
 
-	<section class="latest-stories">
+	<section class="popular">
 		<div class="container-fluid main-container col-md-12">
-			<h2 class="section-title">Latest Stories</h2>
-			<div id="latest" class="row">
-				<!-- <div class="col-md-4">
-					<img class="card-img-top img-fluid" src="images/slide3.png">
-					<div class="card-body">
-						<h5 class="card-title">Learn to surf with a Manhattan Beach local</h5>
-						<p class="card-text">Learn to surf like a local. First, we’ll decide on a good break based on the surf conditions and weather.</p>
-						<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-					</div>
-				</div> -->
-				</div>
-			</div>
+			<h2 class="section-title">Popular</h2>
+			<div id="popular-stories"></div>
 		</div>
 	</section>
-
-
 	<script id="popular-tmpl" type="text/template">
 		{{#.}}
 		<div class="row">
 			<div class="col-sm-4">
 				<a href="#"><img class="img-fluid" src="{{thumbnail}}"></a>
 			</div>
-
 			<div class="col-sm-8">
 				<h3 class="card-title"><a href="#">{{title}}</a></h3>
 				<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
@@ -171,86 +157,12 @@
 		{{/.}}
 	</script>
 
-	<section class="popular">
-		<div class="container-fluid main-container col-md-12">
-			<h2 class="section-title">Popular</h2>
-			<div id="popular-stories">
-				<!-- <div class="row">
-					<div class="col-sm-4">
-						<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
-					</div>
-
-					<div class="col-sm-8">
-						<h3 class="card-title"><a href="#">Joshua Tree Overnight Adventure</a></h3>
-						<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-						<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-					</div>
-				</div> -->
-			</div>
-
-			<!-- <div class="row">
-				<div class="col-sm-4">
-					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
-				</div>
-
-				<div class="col-sm-8">
-					<h3 class="card-title"><a href="#">London house and garden studio</a></h3>
-					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-sm-4">
-					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
-				</div>
-				<div class="col-sm-8">
-					<h3 class="card-title"><a href="#">Practice yoga on a paddleboard on the ocean</a></h3>
-					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4">
-					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
-				</div>
-				<div class="col-sm-8">
-					<h3 class="card-title"><a href="#">Practice yoga on a paddleboard on the ocean</a></h3>
-					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4">
-					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
-				</div>
-				<div class="col-sm-8">
-					<h3 class="card-title"><a href="#">Practice yoga on a paddleboard on the ocean</a></h3>
-					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-				</div>
-			</div> -->
-
-		</div>
-	</section>
 	<section class="subscribe-form">
 
 	</section>
 	<footer>
 
 	</footer>
-
-
-
-
-
-
-
-
-
-
-
-
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
