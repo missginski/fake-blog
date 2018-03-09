@@ -100,7 +100,6 @@
 			</div>
 		</div>
 	</section>
-
 	<script id="aside-tmpl" type="text/template">
 		{{#.}}
 		<div class="card text-white">
@@ -112,9 +111,6 @@
 		</div>
 		{{/.}}
 	</script>
-
-
-
 	<!-- <script id="top-tmpl" type="text/template">
 		{{#articles}}
 		<div class="carousel-item active">
@@ -126,57 +122,73 @@
 		</div>
 		{{/articles}}
 	</script> -->
+	<script id="latest-tmpl" type="text/template">
+		{{#.}}
+		<div class="col-md-4">
+			<a href="{{link}}">
+				<img class="card-img-top img-fluid" src="{{thumbnail}}">
+			</a>
+			<div class="card-body">
+				<h5 class="card-title">{{title}}</h5>
+				<p class="card-text">Learn to surf like a local. First, we’ll decide on a good break based on the surf conditions and weather.</p>
+				<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
+			</div>
+		</div>
+		{{/.}}
+	</script>
 
 	<section class="latest-stories">
 		<div class="container-fluid main-container col-md-12">
 			<h2 class="section-title">Latest Stories</h2>
-			<div class="row">
-				<div class="col-md-4">
+			<div id="latest" class="row">
+				<!-- <div class="col-md-4">
 					<img class="card-img-top img-fluid" src="images/slide3.png">
 					<div class="card-body">
 						<h5 class="card-title">Learn to surf with a Manhattan Beach local</h5>
 						<p class="card-text">Learn to surf like a local. First, we’ll decide on a good break based on the surf conditions and weather.</p>
 						<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 					</div>
-				</div>
-
-				<div class="col-md-4">
-					<img class="card-img-top img-fluid" src="images/slide3.png">
-					<div class="card-body">
-						<h5 class="card-title">Stretch it out at sunset on Baker Beach</h5>
-						<p class="card-text">Gather at Baker Beach before class to meet the founder of Outdoor Yoga SF, learn about the history of Baker Beach and why its important to... </p>
-						<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<img class="card-img-top img-fluid" src="images/slide3.png">
-					<div class="card-body">
-						<h5 class="card-title">Fragile Future, Private Commission Paris</h5>
-						<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-						<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-					</div>
+				</div> -->
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="popular">
-		<div class="container-fluid main-container col-md-12">
-			<h2 class="section-title">Popular</h2>
-			<div class="row">
-				<div class="col-sm-4">
-					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
-				</div>
 
-				<div class="col-sm-8">
-					<h3 class="card-title"><a href="#">Joshua Tree Overnight Adventure</a></h3>
-					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
-					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
-				</div>
+	<script id="popular-tmpl" type="text/template">
+		{{#.}}
+		<div class="row">
+			<div class="col-sm-4">
+				<a href="#"><img class="img-fluid" src="{{thumbnail}}"></a>
 			</div>
 
-			<div class="row">
+			<div class="col-sm-8">
+				<h3 class="card-title"><a href="#">{{title}}</a></h3>
+				<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
+				<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
+			</div>
+		</div>
+		{{/.}}
+	</script>
+
+	<section class="popular">
+		<div class="container-fluid main-container col-md-12">
+			<h2 class="section-title">Popular</h2>
+			<div id="popular-stories">
+				<!-- <div class="row">
+					<div class="col-sm-4">
+						<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
+					</div>
+
+					<div class="col-sm-8">
+						<h3 class="card-title"><a href="#">Joshua Tree Overnight Adventure</a></h3>
+						<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
+						<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
+					</div>
+				</div> -->
+			</div>
+
+			<!-- <div class="row">
 				<div class="col-sm-4">
 					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
 				</div>
@@ -192,37 +204,32 @@
 				<div class="col-sm-4">
 					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
 				</div>
-
 				<div class="col-sm-8">
 					<h3 class="card-title"><a href="#">Practice yoga on a paddleboard on the ocean</a></h3>
 					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
 					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-sm-4">
 					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
 				</div>
-
 				<div class="col-sm-8">
 					<h3 class="card-title"><a href="#">Practice yoga on a paddleboard on the ocean</a></h3>
 					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
 					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-sm-4">
 					<a href="#"><img class="img-fluid" src="images/slide2.png"></a>
 				</div>
-
 				<div class="col-sm-8">
 					<h3 class="card-title"><a href="#">Practice yoga on a paddleboard on the ocean</a></h3>
 					<p class="card-text">Aliquam gravida congue risus, ac sollicitudin risus dictum quis. Etiam urna libero, vehicula eget neque vel, congue blandit dui. Pellentesqu...</p>
 					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 	</section>
