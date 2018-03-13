@@ -71,10 +71,7 @@ function renderPopularStories() {
 }
 renderPopularStories()
 
-
-
-
-function parseRSS(url, ii) {
+function parseRSS(url) {
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -83,11 +80,13 @@ function parseRSS(url, ii) {
 			if (response.status != 'ok'){
 				throw response.message;
 			}
-			handleResponse(response, ii)
-			// return response
+			// handleResponse(response, ii)
+			console.log(response)
+			return response
 		}
 	});
 }
+parseRSS('http://nypost.com/tech/feed/')
 
 function handleResponse(response, ii) {
 	let articles = response.items;
