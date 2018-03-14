@@ -1,7 +1,31 @@
 const api_key = config.API_KEY;
 
+function renderCarouselStories() {
+	let url = 'http://feeds.mashable.com/Mashable';
+	$.ajax({
+		method: 'GET',
+		dataType: 'json',
+		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
+		success: function(response){
+			let articles = response.items,
+					myArticles = [];
+			$.each(articles, function(i, eachArticle){
+				myArticles.push(eachArticle);
+				if (i === 3){
+					return false;
+				}
+				console.log(myArticles)
+				let template = $('#carousel-tmpl').html();
+				let rendered = Mustache.render(template, myArticles);
+				$('#carousel').html(rendered);
+			})
+		}
+	})
+}
+renderCarouselStories()
+
 function renderAsideStories() {
-	let url = 'http://feeds.feedburner.com/TechCrunch/';
+	let url = 'http://feeds.mashable.com/Mashable';
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -48,7 +72,7 @@ function renderLatestStories() {
 renderLatestStories()
 
 function renderPopularStories() {
-	let url = 'http://feeds.mashable.com/Mashable';
+	let url = 'http://nypost.com/tech/feed/';
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -70,6 +94,11 @@ function renderPopularStories() {
 	})
 }
 renderPopularStories()
+
+
+
+
+
 
 function parseRSS(url) {
 	$.ajax({

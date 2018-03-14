@@ -2,7 +2,6 @@ body {
 	font-family: Montserrat, sans-serif;
 	font-size: 1.12em;
 	padding-top: 1.25rem;
-	border-radius: 0;
 }
 
 .main-container {
@@ -53,14 +52,6 @@ hr {
 .nav-item {
 	margin: 0 1rem;
 }
-
-/*.nav-link:hover,
-.nav-link:focus,
-.nav-link:active,
-.nav-link.active,
-.open>.dropdown-toggle.nav-link {
-	color: #f78181;
-}*/
 
 .card,
 .slide,
