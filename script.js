@@ -18,6 +18,7 @@ function renderCarouselStories() {
 				let template = $('#carousel-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#carousel').html(rendered);
+				$('.carousel-item:first-child').addClass('active');
 			})
 		}
 	})
