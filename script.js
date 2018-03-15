@@ -1,7 +1,7 @@
 const api_key = config.API_KEY;
 
 function renderCarouselStories() {
-	let url = 'http://feeds.mashable.com/Mashable';
+	let url = 'http://nypost.com/tech/feed/';
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -97,10 +97,6 @@ function renderPopularStories() {
 renderPopularStories()
 
 
-
-
-
-
 function parseRSS(url) {
 	$.ajax({
 		method: 'GET',
@@ -117,6 +113,7 @@ function parseRSS(url) {
 	});
 }
 parseRSS('http://nypost.com/tech/feed/')
+parseRSS('http://www.byrdie.com/rss')
 
 function handleResponse(response, ii) {
 	let articles = response.items;
