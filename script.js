@@ -73,7 +73,7 @@ function renderLatestStories() {
 renderLatestStories()
 
 function renderPopularStories() {
-	let url = 'http://nypost.com/tech/feed/';
+	let url = 'http://www.latina.com/fashion/feed';
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',

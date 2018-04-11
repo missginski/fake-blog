@@ -12,96 +12,105 @@
 	<!-- <link rel="stylesheet" href="stylle.scss"> -->
 </head>
 <body>
-	<!-- <header class="">
-		<div class="container">
 
-		</div>
-	</header> -->
-
-	<section class="heading">
-		<div class="header-top d-flex justify-content-between container-fluid">
-			<div class="social-links-container header-links d-flex flex-column">
-				<a href="#" class="header-link">
-					<span class="fa-layers fa-fw social-icon fa-2x">
-						<i class="far fa-circle"></i>
-						<i class="fab fa-facebook-f" data-fa-transform="shrink-6 left-0.35"></i>
-					</span>
-				</a>
-				<a href="#" class="header-link">
-					<span class="fa-layers fa-fw social-icon fa-2x">
-						<i class="far fa-circle"></i>
-						<i class="fab fa-twitter" data-fa-transform="shrink-8 down-0.3 right-0.15"></i>
-					</span>
-				</a>
-				<a href="#" class="header-link">
-					<span class="fa-layers fa-fw social-icon fa-2x">
-						<i class="far fa-circle"></i>
-						<i class="fab fa-instagram" data-fa-transform="shrink-7 down-0.1 left-0.15"></i>
-					</span>
-				</a>
-				<a href="#" class="header-link">
-					<span class="fa-layers fa-fw social-icon fa-2x">
-						<i class="far fa-circle"></i>
-						<i class="fas fa-plus" data-fa-transform="shrink-8 down-0.1 left-0.15"></i>
-					</span>
-				</a>
-			</div>
-			<div class="main-container">
-				<div class="logo-container d-flex justify-content-center">
-					<a href="/"><img src="images/Logo.png" class="logo img-fluid"></a>
-				</div>
-				<nav class="navbar navbar-expand-sm navbar-light">
-					<div class="container">
-						<div class="collapse navbar-collapse">
-							<ul class="navbar-nav d-flex justify-content-between">
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">Features</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">Style</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">Music</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">Lifestyle</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">Culture</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">Fashion</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link main-nav" href="#">People</a>
-								</li>
-							</ul>
-						</div>
+	<div class="my-container">
+		<header class="blog-header">
+			<div class="row no-gutters d-flex justify-content-between">
+				<div class="col-4">
+					<div class="social-links header-links d-flex flex-column">
+						<a href="#" class="header-link pb-2">
+							<span class="fa-layers fa-fw social-icon fa-2x">
+								<i class="far fa-circle"></i>
+								<i class="fab fa-facebook-f" data-fa-transform="shrink-6 left-0.35"></i>
+							</span>
+						</a>
+						<a href="#" class="header-link pb-2">
+							<span class="fa-layers fa-fw social-icon fa-2x">
+								<i class="far fa-circle"></i>
+								<i class="fab fa-twitter" data-fa-transform="shrink-8 down-0.3 right-0.15"></i>
+							</span>
+						</a>
+						<a href="#" class="header-link pb-2">
+							<span class="fa-layers fa-fw social-icon fa-2x">
+								<i class="far fa-circle"></i>
+								<i class="fab fa-instagram" data-fa-transform="shrink-7 down-0.1 left-0.15"></i>
+							</span>
+						</a>
+						<a href="#" class="header-link">
+							<span class="fa-layers fa-fw social-icon fa-2x">
+								<i class="far fa-circle"></i>
+								<i class="fas fa-plus" data-fa-transform="shrink-8 down-0.1 left-0.15"></i>
+							</span>
+						</a>
 					</div>
-				</nav>
-			</div>
-			<div class="header-links">
-				<a href="#" class="header-link">
-					<i class="fas fa-search fa-lg social-icon"></i>
-				</a>
-			</div>
-		</div>
-	<hr>
-</section>
+				</div>
 
-<script id="carousel-tmpl" type="text/template">
-	{{#.}}
-	<div class="carousel-item">
-		<div class="img-overlay bg-grad">
-			<img src="{{enclosure.link}}" class="img-fluid">
-			<div class="carousel-caption">
-				<a href="{{link}}" class="card-title text-white">{{title}}</a>
-				<p class="source-info">Travel   /   August 21 2017</p>
+				<div class="col-4 text-center py-4">
+					<a href="/"><img src="images/Logo.png" class="img-fluid"></a>
+				</div>
+
+				<div class="col-4 d-flex justify-content-end pr-1">
+					<div class="header-links">
+						<a href="#" class="header-link">
+							<i class="fas fa-search fa-lg social-icon"></i>
+						</a>
+					</div>
+					<!-- <form class="form-inline my-2 my-md-0">
+	          <input class="form-control" type="text" placeholder="Search">
+	        </form> -->
+				</div>
+			</div>
+		</header>
+
+		<nav class="navbar navbar-expand-sm navbar-light">
+			<div class="container">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav" aria-controls="myNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="myNav">
+					<ul class="navbar-nav mx-auto">
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">Features</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">Style</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">Music</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">Lifestyle</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">Culture</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">Fashion</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link main-nav" href="#">People</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<hr>
+	</div>
+
+	<script id="carousel-tmpl" type="text/template">
+		{{#.}}
+		<div class="carousel-item">
+			<div class="img-overlay bg-grad">
+				<img src="{{enclosure.link}}" class="img-fluid">
+				<div class="carousel-caption">
+					<a href="{{link}}" class="card-title text-white">{{title}}</a>
+					<p class="source-info">Travel   /   August 21 2017</p>
+				</div>
 			</div>
 		</div>
-	</div>
-	{{/.}}
-</script>
+		{{/.}}
+	</script>
 
 	<section class="top-stories container-fluid col-md-12 main-container">
 		<div class="row">
@@ -154,7 +163,9 @@
 			</a>
 			<div class="card-body">
 				<h5 class="card-title">{{title}}</h5>
-				<p class="card-text">Learn to surf like a local. First, we’ll decide on a good break based on the surf conditions and weather.</p>
+				<div class="card-text-wrapper">
+					<p class="card-text">{{content}}</p>
+				</div>
 				<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 			</div>
 		</div>

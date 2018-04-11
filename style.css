@@ -1,7 +1,17 @@
+/*html {
+	height: 100%;
+}*/
 body {
+	/*height: 100%;*/
 	font-family: Montserrat, sans-serif;
 	font-size: 1.12em;
-	padding-top: 1.25rem;
+	/*padding-top: 1.875rem;*/
+}
+.my-container {
+	max-width: 1920px;
+	height: 100%;
+	margin: auto;
+	padding: 1.875rem
 }
 
 .main-container {
@@ -9,38 +19,37 @@ body {
 	margin: auto;
 }
 
-.header-top {
-	max-width: 97%;
-	margin: auto;
+.navbar {
+	color: #404040;
+	padding: 1.25rem 2.5rem;
+	margin-top: -3.875rem;
 }
 
-.header-link {
+
+
+/*.header-link {
 	margin-top: 0.625rem;
-}
+}*/
 
 .social-icon {
+	/*color: #9a9a9a;*/
 	color: #ececec;
 }
-
 .social-icon:hover {
 	color: #f78181;
 }
-
-.nav-link.main-nav:hover {
+.nav-link.main-nav:hover,
+.nav-link.main-nav:active {
 	color: #f78181 !important;
 }
 
-.logo {
+/*.logo {
 	max-width: 100%;
 	height: auto;
 	margin: 2.75rem auto;
-}
+}*/
 
-.navbar {
-	color: #404040;
-	padding: 1.25rem;
-	margin: auto;
-}
+
 
 hr {
 	height: 1px;
@@ -63,13 +72,12 @@ hr {
 
 /*.bg-grad {
 	background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,0));
-	z-index: initial;
 }*/
 
-/*.carousel {
-	max-width: 100%;
-	height: auto;
-}*/
+.top-stories .row,
+.latest-stories .row {
+	margin-bottom: 6.5rem;
+}
 
 .carousel-item {
 	max-width: 940px;
@@ -117,19 +125,20 @@ hr {
 	padding-bottom: 1.25rem;
 }
 
-.card-text {
-	font-family: OpenSans;
-	font-size: 0.874em;
-	line-height: 1.43;
-	color: #9a9a9a;
-}
-
 .top-stories .card {
 	max-width: 450px;
 	/*height: 290px;*/
 	height: auto;
 	/*background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));*/
 	overflow: hidden;
+}
+
+.card-text {
+	font-family: OpenSans;
+	font-size: 0.874em;
+	line-height: 1.43;
+	color: #9a9a9a;
+	text-overflow: ellipsis;
 }
 
 .card-img-top {
@@ -169,21 +178,22 @@ hr {
 
 .card-body {
 	background: #ffffff;
+	max-width: 440px;
+	height: 25%;
+	/*white-space: nowrap;*/
+	overflow: hidden;
 }
 
-/*.card-title {
-	padding
-}*/
+.card-text-wrapper {
+	text-overflow: clip;
+	/*white-space: nowrap;*/
+	overflow: hidden;
+	width: 100%;
+}
 
 .card-img-top {
 	max-width: 440px;
 	height: auto;
-}
-
-.card-body {
-	max-width: 440px
-	height: 280px;
-	/*height: 20%;*/
 }
 
 .subscribe-form {
@@ -197,7 +207,7 @@ footer {
 }
 
 section {
-	padding: 3rem 0;
+	padding: 2.5rem 0;
 }
 
 .popular img {
@@ -215,8 +225,8 @@ section {
 }
 
 .section-title {
-	padding: 1.5rem 0;
-	margin-top: -8.5rem;
+	padding: 4.5rem 0;
+	margin-top: -11.5rem;
 }
 
 .popular .section-title {
