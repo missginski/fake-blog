@@ -1,37 +1,42 @@
-/*html {
-	height: 100%;
-}*/
 body {
 	/*height: 100%;*/
 	font-family: Montserrat, sans-serif;
 	font-size: 1.12em;
 }
-
 .my-container {
 	max-width: 95%;
 	height: 100%;
 	margin: auto;
 	padding: 1.875rem
 }
-
 .main-container {
 	max-width: 75%;
 	margin: auto;
-}
-/*// Extra large devices (large desktops, 1200px and up)*/
+} /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
 	.my-container {
 		max-width: 1920px;
 	}
-	/*.main-container {
-		max-width: 1410px;
-	}*/
  }
-
 .navbar {
 	color: #404040;
 	padding: 1.25rem 2.5rem;
 	margin-top: -2.625rem;
+}
+.navbar-toggler {
+	margin-left: auto;
+	margin-top: -4.25rem;
+}
+.nav-link.main-nav:hover,
+.nav-link.main-nav:active {
+	color: #f78181 !important;
+}
+
+/*// Medium devices (tablets, 768px and down)*/
+@media (max-width: 768px) {
+	.nav-link  {
+		text-align: right;
+	}
 }
 
 .social-icon {
@@ -41,11 +46,6 @@ body {
 .social-icon:hover {
 	color: #f78181;
 }
-.nav-link.main-nav:hover,
-.nav-link.main-nav:active {
-	color: #f78181 !important;
-}
-
 hr {
 	height: 1px;
 	color: #ececec;
@@ -60,37 +60,27 @@ hr {
 	border-radius: 0;
 	border: none;
 }
-
-/*.bg-grad {
-	background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,0));
-}*/
-
 .top-stories .row,
 .latest-stories .row {
 	margin-bottom: 6.5rem;
 }
-
 .carousel-item {
 	max-width: 940px;
 	height: auto;
 	overflow: hidden;
 }
-
 .carousel-caption {
 	top: auto;
 	bottom: 10%;
 	text-align: left;
 }
-
 .carousel-caption a {
 	font-size: 2.25em;
 	line-height: 1.15;
 }
-
 .carousel-caption .source-info {
 	padding-top: 4rem;
 }
-
 .source-info {
 	text-transform: uppercase;
 	font-size: .75rem;
@@ -98,24 +88,20 @@ hr {
 	color: #ffffff;
 	padding-top: 1.5rem;
 }
-
 .card-img-overlay {
 	top: auto;
 	bottom: 0;
 }
-
 .card-img-overlay a {
 	font-size: 1.5em;
 	line-height: 1.15;
 	overflow: hidden;
 }
-
 .card {
 	max-width: 100%;
 	height: auto;
 	padding-bottom: 1.25rem;
 }
-
 .top-stories .card {
 	max-width: 450px;
 	/*height: 290px;*/
@@ -123,7 +109,6 @@ hr {
 	/*background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,0));*/
 	overflow: hidden;
 }
-
 .card-text {
 	font-family: OpenSans;
 	font-size: 0.874em;
@@ -131,18 +116,15 @@ hr {
 	color: #9a9a9a;
 	text-overflow: ellipsis;
 }
-
 .card-img-top {
 	border-radius: 0;
 	max-width: 100%;
 	height: auto;
 }
-
 .card-title {
 	color: #404040;
 	font-size: 1.5em;
 }
-
 .latest-stories .card-text {
 	font-family: OpenSans;
 	font-size: 0.875rem;
@@ -150,7 +132,6 @@ hr {
 	color: #9a9a9a;
 	padding-bottom: 2rem;
 }
-
 .card-source-info {
 	font-family: Montserrat;
 	font-size: .75em;
@@ -158,15 +139,12 @@ hr {
 	text-transform: uppercase;;
 	color: #9a9a9a;
 }
-
 .card-source-info b {
 	color: #404040;
 }
-
 .latest-stories {
 	background-color: #f7f7f7;
 }
-
 .card-body {
 	background: #ffffff;
 	max-width: 440px;
@@ -174,29 +152,24 @@ hr {
 	/*white-space: nowrap;*/
 	overflow: hidden;
 }
-
 .card-text-wrapper {
 	text-overflow: clip;
 	/*white-space: nowrap;*/
 	overflow: hidden;
 	width: 100%;
 }
-
 .card-img-top {
 	max-width: 440px;
 	height: auto;
 }
-
 .subscribe-form {
 	height: 312px;
 	background-color: #f7f7f7;
 }
-
 footer {
 	/*height: 826px;*/
 	background-color: #1a1a1a;
 }
-
 section {
 	padding: 2.5rem 0;
 }
@@ -205,34 +178,17 @@ section {
 	max-width: 100%;
 	height: auto;
 }
-
 .popular .card-text {
 	padding: 2rem 0;
 }
-
 .popular .row {
 	border-bottom: 1px solid #ececec;
 	padding: 1.875rem;
 }
-
 .section-title {
 	padding: 4.5rem 0;
 	margin-top: -11.5rem;
 }
-
 .popular .section-title {
 	border-bottom: 1px solid #ececec;
-}
-
-.navbar-toggler {
-	margin-left: auto;
-	margin-top: -4.25rem;
-
-}
-
-.nav-scroller {
-    position: relative;
-    z-index: 2;
-    height: 2.75rem;
-    overflow-y: hidden;
 }
