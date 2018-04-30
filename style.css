@@ -4,20 +4,28 @@ body {
 	font-size: 1.12em;
 }
 .my-container {
-	max-width: 95%;
 	height: 100%;
 	margin: auto;
-	padding: 1.875rem
+	padding: .5rem;
 }
 .main-container {
-	max-width: 75%;
+	max-width: 85%;
 	margin: auto;
 } /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
-	.my-container {
+	/*.my-container {
 		max-width: 1920px;
+	}*/
+ } /*// Medium devices (tablets, 992px and up)*/
+@media (min-width: 992px) {
+	.my-container {
+		max-width: 95%;
+		padding: 1.875rem
 	}
- }
+	.main-container {
+		max-width: 75%;
+	}
+}
 .navbar {
 	color: #404040;
 	padding: 1.25rem 2.5rem;
@@ -30,17 +38,13 @@ body {
 .nav-link.main-nav:hover,
 .nav-link.main-nav:active {
 	color: #f78181 !important;
-}
-
-/*// Medium devices (tablets, 768px and down)*/
+} /* Medium devices (tablets, 768px and down)*/
 @media (max-width: 768px) {
 	.nav-link  {
 		text-align: right;
 	}
 }
-
 .social-icon {
-	/*color: #9a9a9a;*/
 	color: #ececec;
 }
 .social-icon:hover {
@@ -52,22 +56,28 @@ hr {
 	max-width: 75%;
 	margin: auto;
 }
-
 .card,
 .slide,
 .card-img,
 .card-img-overlay {
 	border-radius: 0;
 	border: none;
+	/*overflow: hidden;*/
 }
 .top-stories .row,
 .latest-stories .row {
-	margin-bottom: 6.5rem;
+	margin-bottom: 2.5rem;
 }
+/*// Extra large devices (large desktops, 1200px and up)*/
+/*@media (min-width: 1200px) {
+	.top-stories .row,
+	.latest-stories .row {
+		margin-bottom: 6.5rem;
+}*/
 .carousel-item {
 	max-width: 940px;
 	height: auto;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .carousel-caption {
 	top: auto;

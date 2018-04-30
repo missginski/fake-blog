@@ -1,7 +1,9 @@
 const api_key = config.API_KEY;
 
+
 function renderCarouselStories() {
-	let url = 'http://nypost.com/tech/feed/';
+	let url = 'https://greatist.com/feed'
+
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -14,7 +16,7 @@ function renderCarouselStories() {
 				if (i === 3){
 					return false;
 				}
-				console.log(myArticles)
+				// console.log(myArticles)
 				let template = $('#carousel-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#carousel').html(rendered);
@@ -26,7 +28,8 @@ function renderCarouselStories() {
 renderCarouselStories()
 
 function renderAsideStories() {
-	let url = 'http://feeds.mashable.com/Mashable';
+	let url = 'https://thoughtcatalog.com/feed/';
+
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -39,6 +42,7 @@ function renderAsideStories() {
 				if (i === 2){
 					return false;
 				}
+				console.log(myArticles)
 				let template = $('#aside-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#aside').html(rendered);
@@ -49,7 +53,8 @@ function renderAsideStories() {
 renderAsideStories()
 
 function renderLatestStories() {
-	let url = 'https://www.theverge.com/rss/frontpage';
+
+	let url = 'https://tinybuddha.com/feed/'
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -62,7 +67,7 @@ function renderLatestStories() {
 				if (i === 3){
 					return false;
 				}
-				console.log(myArticles)
+				// console.log(myArticles)
 				let template = $('#latest-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#latest').html(rendered);
@@ -73,7 +78,9 @@ function renderLatestStories() {
 renderLatestStories()
 
 function renderPopularStories() {
-	let url = 'http://www.latina.com/fashion/feed';
+	// let url = 'https://www.elitedaily.com/rss';
+	let url = 'http://www.byrdie.com/rss'
+
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -86,7 +93,7 @@ function renderPopularStories() {
 				if (i === 6){
 					return false;
 				}
-				console.log(myArticles)
+				// console.log(myArticles)
 				let template = $('#popular-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#popular-stories').html(rendered);
@@ -107,13 +114,13 @@ function parseRSS(url) {
 				throw response.message;
 			}
 			// handleResponse(response, ii)
-			console.log(response)
+			// console.log(response)
 			return response
 		}
 	});
 }
-parseRSS('http://nypost.com/tech/feed/')
-parseRSS('http://www.byrdie.com/rss')
+// parseRSS('http://nypost.com/tech/feed/')
+// parseRSS('http://www.byrdie.com/rss')
 
 function handleResponse(response, ii) {
 	let articles = response.items;
@@ -138,3 +145,6 @@ function showTopStories(myArticles) {
 function renderFeeds() {
 	let asideStories = parseRSS('http://nypost.com/tech/feed/', 2);
 }
+// let url = 'https://www.theverge.com/rss/frontpage';
+// let url = 'http://www.lifehack.org/feed/';
+// let url = 'http://feeds.mashable.com/Mashable';
