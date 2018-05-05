@@ -138,25 +138,29 @@
 	<section class="latest-stories">
 		<div class="container-fluid main-container col-md-12">
 			<h2 class="section-title">Latest Stories</h2>
-			<div id="latest" class="row"></div>
+			<div class="card-deck">
+				<div id="latest" class="row"></div>
+			</div>
 		</div>
 	</section>
 
 	<script id="latest-tmpl" type="text/template">
 		{{#.}}
 		<div class="col-md-4">
-			<a href="{{link}}">
-				<img class="card-img-top img-fluid" src="{{thumbnail}}">
-			</a>
-			<div class="card-body">
-				<h5 class="card-title">{{title}}</h5>
-				<div class="card-text-wrapper">
-					<!-- <p class="card-text">{{content}}</p> -->
-					<p>
-						Lorem ipsum dolor amet raw denim in sustainable taiyaki banjo butcher. Asymmetrical sint tempor, cronut pariatur pug semiotics iPhone cliche humblebrag keytar. Artisan messenger bag pug, hexagon air plant roof party in enim pabst chambray. Post-ironic glossier mlkshk slow-carb skateboard qui marfa venmo shabby chic. Iceland sed pop-up, photo booth in put a bird on it kinfolk. Mollit thundercats blue bottle gentrify DIY ut dolor tumblr kombucha meditation affogato.
-					</p>
+			<div class="card">
+				<a href="{{link}}">
+					<img class="card-img-top img-fluid" src="{{thumbnail}}">
+				</a>
+				<div class="card-body">
+					<h5 class="card-title">{{title}}</h5>
+					<div class="card-text-wrapper">
+						<!-- <p class="card-text">{{content}}</p> -->
+						<p>
+							Lorem ipsum dolor amet raw denim in sustainable taiyaki banjo butcher. Asymmetrical sint tempor, cronut pariatur pug semiotics iPhone cliche humblebrag keytar. Artisan messenger bag pug, hexagon air plant roof party in enim pabst chambray. Post-ironic glossier mlkshk slow-carb skateboard qui marfa venmo shabby chic. Iceland sed pop-up, photo booth in put a bird on it kinfolk. Mollit thundercats blue bottle gentrify DIY ut dolor tumblr kombucha meditation affogato.
+						</p>
+					</div>
+					<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 				</div>
-				<p class="card-source-info"><b>Travel</b>   /   August 21 2017 </p>
 			</div>
 		</div>
 		{{/.}}

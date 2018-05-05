@@ -157,7 +157,6 @@ hr {
 .card-body {
 	background: #ffffff;
 	max-width: 440px;
-	/*height: 25%;*/
 	/*white-space: nowrap;*/
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -182,7 +181,6 @@ footer {
 section {
 	padding: 2.5rem 0;
 }
-
 .popular img {
 	max-width: 100%;
 	height: auto;
