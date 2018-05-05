@@ -1,5 +1,4 @@
 body {
-	/*height: 100%;*/
 	font-family: Montserrat, sans-serif;
 	font-size: 1.12em;
 }
@@ -11,12 +10,12 @@ body {
 .main-container {
 	max-width: 85%;
 	margin: auto;
-} /* Extra large devices (large desktops, 1200px and up)*/
+} /* 1200px and up */
 @media (min-width: 1200px) {
 	.my-container {
 		max-width: 1920px;
 	}
- } /*// Medium devices (tablets, 992px and up)*/
+ } /* 992px and up */
 @media (min-width: 992px) {
 	.my-container {
 		max-width: 95%;
@@ -38,7 +37,7 @@ body {
 .nav-link.main-nav:hover,
 .nav-link.main-nav:active {
 	color: #f78181 !important;
-} /* Medium devices (tablets, 768px and down)*/
+} /* 768px and down */
 @media (max-width: 768px) {
 	.nav-link  {
 		text-align: right;
@@ -68,7 +67,7 @@ hr {
 .latest-stories .row {
 	margin-bottom: 2.5rem;
 }
-/*// Extra large devices (large desktops, 1200px and up)*/
+/* 1200px and up */
 /*@media (min-width: 1200px) {
 	.top-stories .row,
 	.latest-stories .row {
@@ -158,9 +157,10 @@ hr {
 .card-body {
 	background: #ffffff;
 	max-width: 440px;
-	height: 25%;
+	/*height: 25%;*/
 	/*white-space: nowrap;*/
 	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .card-text-wrapper {
 	text-overflow: clip;
@@ -177,7 +177,6 @@ hr {
 	background-color: #f7f7f7;
 }
 footer {
-	/*height: 826px;*/
 	background-color: #1a1a1a;
 }
 section {
