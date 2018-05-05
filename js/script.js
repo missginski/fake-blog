@@ -1,9 +1,7 @@
 const api_key = config.API_KEY;
 
-
 function renderCarouselStories() {
 	let url = 'https://greatist.com/feed'
-
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -29,7 +27,6 @@ renderCarouselStories()
 
 function renderAsideStories() {
 	let url = 'https://thoughtcatalog.com/feed/';
-
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -42,7 +39,7 @@ function renderAsideStories() {
 				if (i === 2){
 					return false;
 				}
-				console.log(myArticles)
+				// console.log(myArticles)
 				let template = $('#aside-tmpl').html();
 				let rendered = Mustache.render(template, myArticles);
 				$('#aside').html(rendered);
@@ -53,7 +50,6 @@ function renderAsideStories() {
 renderAsideStories()
 
 function renderLatestStories() {
-
 	let url = 'https://tinybuddha.com/feed/'
 	$.ajax({
 		method: 'GET',
@@ -78,9 +74,7 @@ function renderLatestStories() {
 renderLatestStories()
 
 function renderPopularStories() {
-	// let url = 'https://www.elitedaily.com/rss';
 	let url = 'http://www.byrdie.com/rss'
-
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
@@ -102,49 +96,3 @@ function renderPopularStories() {
 	})
 }
 renderPopularStories()
-
-
-function parseRSS(url) {
-	$.ajax({
-		method: 'GET',
-		dataType: 'json',
-		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
-		success: function(response){
-			if (response.status != 'ok'){
-				throw response.message;
-			}
-			// handleResponse(response, ii)
-			// console.log(response)
-			return response
-		}
-	});
-}
-// parseRSS('http://nypost.com/tech/feed/')
-// parseRSS('http://www.byrdie.com/rss')
-
-function handleResponse(response, ii) {
-	let articles = response.items;
-	let myArticles = [];
-	$.each(articles, function(i, eachArticle){
-		myArticles.push(eachArticle)
-		if (i === ii) {
-			return false;
-		}
-		showTopStories(myArticles)
-		// return myArticles
-	})
-}
-
-function showTopStories(myArticles) {
-	console.log(myArticles)
-	let template = $('#aside-tmpl').html();
-	let html = Mustache.to_html(template, myArticles);
-	$('#aside').html(html);
-}
-
-function renderFeeds() {
-	let asideStories = parseRSS('http://nypost.com/tech/feed/', 2);
-}
-// let url = 'https://www.theverge.com/rss/frontpage';
-// let url = 'http://www.lifehack.org/feed/';
-// let url = 'http://feeds.mashable.com/Mashable';
