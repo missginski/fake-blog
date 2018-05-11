@@ -32,7 +32,8 @@ body {
 }
 .navbar-toggler {
 	margin-left: auto;
-	margin-top: -4.25rem;
+	/*margin-top: -4.25rem;*/
+	margin-top: -2.375rem;
 }
 .nav-link.main-nav:hover,
 .nav-link.main-nav:active {
