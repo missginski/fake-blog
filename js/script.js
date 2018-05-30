@@ -1,5 +1,22 @@
 const api_key = config.API_KEY;
 
+function getData(feedurl, handle) {
+	$.ajax({
+		method: 'GET',
+		dataType: 'json',
+		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedurl) + '&api_key=' + api_key,
+		success: function(response) {
+			handle(response)
+		}
+	})
+}
+
+function handle(response) {
+	console.log(response)
+}
+getData('https://greatist.com/feed', handle)
+
+
 function renderCarouselStories() {
 	let url = 'https://greatist.com/feed'
 	$.ajax({
