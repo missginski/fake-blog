@@ -1,115 +1,85 @@
 const api_key = config.API_KEY;
+const carouselFeed = 'https://greatist.com/feed';
+const asideFeed = 'https://thoughtcatalog.com/feed/';
+const latestFeed = 'https://tinybuddha.com/feed/';
+const popularFeed = 'http://www.byrdie.com/rss';
 
-function getData(feedurl, handle) {
+// get articles
+function getData(feedurl, handler) {
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
 		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedurl) + '&api_key=' + api_key,
 		success: function(response) {
-			handle(response)
+			handler(response)
 		}
 	})
 }
+getData(carouselFeed, renderCarouselStories);
+getData(asideFeed, renderAsideStories);
+getData(latestFeed, renderLatestStories);
+getData(popularFeed, renderPopularStories);
 
-function handle(response) {
-	console.log(response)
-}
-getData('https://greatist.com/feed', handle)
+// render articles
+function renderCarouselStories(response) {
+	let articles = response.items;
+	let myArticles = [];
 
-
-function renderCarouselStories() {
-	let url = 'https://greatist.com/feed'
-	$.ajax({
-		method: 'GET',
-		dataType: 'json',
-		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
-		success: function(response){
-			let articles = response.items,
-					myArticles = [];
-			$.each(articles, function(i, eachArticle){
-				myArticles.push(eachArticle);
-				if (i === 3){
-					return false;
-				}
-				// console.log(myArticles)
-				let template = $('#carousel-tmpl').html();
-				let rendered = Mustache.render(template, myArticles);
-				$('#carousel').html(rendered);
-				$('.carousel-item:first-child').addClass('active');
-			})
+	$.each(articles, function(i, article) {
+		myArticles.push(article);
+		if ( i === 3 ) {
+			return false;
 		}
 	})
-}
-renderCarouselStories()
 
-function renderAsideStories() {
-	let url = 'https://thoughtcatalog.com/feed/';
-	$.ajax({
-		method: 'GET',
-		dataType: 'json',
-		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
-		success: function(response){
-			let articles = response.items,
-					myArticles = [];
-			$.each(articles, function(i, eachArticle){
-				myArticles.push(eachArticle);
-				if (i === 2){
-					return false;
-				}
-				// console.log(myArticles)
-				let template = $('#aside-tmpl').html();
-				let rendered = Mustache.render(template, myArticles);
-				$('#aside').html(rendered);
-			})
+	let template = $('#carousel-tmpl').html();
+	let rendered = Mustache.render(template, myArticles);
+	$('#carousel').html(rendered);
+	$('.carousel-item:first-child').addClass('active');
+}
+
+function renderAsideStories(response) {
+	let articles = response.items;
+	let myArticles = [];
+
+	$.each(articles, function(i, article) {
+		myArticles.push(article);
+		if ( i === 2 ) {
+			return false;
 		}
+
+		let template = $('#aside-tmpl').html();
+		let rendered = Mustache.render(template, myArticles);
+		$('#aside').html(rendered);
 	})
 }
-renderAsideStories()
 
-function renderLatestStories() {
-	let url = 'https://tinybuddha.com/feed/'
-	$.ajax({
-		method: 'GET',
-		dataType: 'json',
-		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
-		success: function(response){
-			let articles = response.items,
-					myArticles = [];
-			$.each(articles, function(i, eachArticle){
-				myArticles.push(eachArticle);
-				if (i === 3){
-					return false;
-				}
-				// console.log(myArticles)
-				let template = $('#latest-tmpl').html();
-				let rendered = Mustache.render(template, myArticles);
-				$('#latest').html(rendered);
-			})
+function renderLatestStories(response) {
+	let articles = response.items;
+	let myArticles = [];
+
+	$.each(articles, function(i, article) {
+		myArticles.push(article);
+		if ( i === 3 ) {
+			return false;
 		}
+		let template = $('#latest-tmpl').html();
+		let rendered = Mustache.render(template, myArticles);
+		$('#latest').html(rendered);
 	})
 }
-renderLatestStories()
 
-function renderPopularStories() {
-	let url = 'http://www.byrdie.com/rss'
-	$.ajax({
-		method: 'GET',
-		dataType: 'json',
-		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=' + api_key,
-		success: function(response){
-			let articles = response.items,
-					myArticles = [];
-			$.each(articles, function(i, eachArticle){
-				myArticles.push(eachArticle);
-				if (i === 6){
-					return false;
-				}
-				// console.log(myArticles)
-				let template = $('#popular-tmpl').html();
-				let rendered = Mustache.render(template, myArticles);
-				$('#popular-stories').html(rendered);
-			})
+function renderPopularStories(response) {
+	let articles = response.items;
+	let myArticles = [];
+
+	$.each(articles, function(i, article) {
+		myArticles.push(article);
+		if ( i === 3 ) {
+			return false;
 		}
+		let template = $('#popular-tmpl').html();
+		let rendered = Mustache.render(template, myArticles);
+		$('#popular-stories').html(rendered);
 	})
 }
-renderPopularStories()
