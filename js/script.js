@@ -1,5 +1,6 @@
 const api_key = config.API_KEY;
 const carouselFeed = 'https://greatist.com/feed';
+// const carouselFeed = 'http://techland.time.com/feed/'
 const asideFeed = 'https://thoughtcatalog.com/feed/';
 const latestFeed = 'https://tinybuddha.com/feed/';
 const popularFeed = 'http://www.byrdie.com/rss';
@@ -39,6 +40,8 @@ function renderCarouselStories(myArticles) {
 
 
 function renderAsideStories(myArticles) {
+	console.log(myArticles)
+
 	let template = $('#aside-tmpl').html();
 	let rendered = Mustache.render(template, myArticles);
 	$('#aside').html(rendered);
