@@ -96,10 +96,11 @@
 		<hr>
 	</div>
 
+
 	<script id="carousel-tmpl" type="text/template">
 		{{#.}}
 		<div class="carousel-item">
-			<div class="img-overlay bg-grad">
+			<div class="img-overlay bg-gradient">
 				<img src="{{enclosure.link}}" class="img-fluid">
 				<div class="carousel-caption">
 					<a href="{{link}}" class="card-title text-white">{{title}}</a>
@@ -129,10 +130,12 @@
 	<script id="aside-tmpl" type="text/template">
 		{{#.}}
 		<div class="card text-white">
-			<img class="card-img img-fluid" src="{{thumbnail}}">
-			<div class="card-img-overlay bg-grad">
-				<a href="{{link}}" class="text-white card-title">{{title}}</a>
-				<p class="source-info">Music  /   August 21 2017</p>
+			<div class="bg-gradient">
+				<img class="card-img img-fluid" src="{{thumbnail}}">
+				<div class="card-img-overlay">
+					<a href="{{link}}" class="text-white card-title">{{title}}</a>
+					<p class="source-info">Music  /   August 21 2017</p>
+				</div>
 			</div>
 		</div>
 		{{/.}}
