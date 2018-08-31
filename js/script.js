@@ -1,20 +1,22 @@
 const api_key = config.API_KEY;
 const carouselFeed = 'https://greatist.com/feed';
-// const carouselFeed = 'http://techland.time.com/feed/'
 const asideFeed = 'https://thoughtcatalog.com/feed/';
 const latestFeed = 'https://tinybuddha.com/feed/';
 const popularFeed = 'http://www.byrdie.com/rss';
 
-
+// get article data
 function getData(feedurl, handler, val) {
 	$.ajax({
 		method: 'GET',
 		dataType: 'json',
 		url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedurl) + '&api_key=' + api_key,
 		success: function(response) {
+
 			let articles = response.items;
 			let myArticles = [];
 			$.each(articles, function(i, article) {
+				newArticles(article)
+
 				myArticles.push(article);
 				if ( i === val ) {
 					return false;
@@ -28,6 +30,25 @@ getData(carouselFeed, renderCarouselStories, 2);
 getData(asideFeed, renderAsideStories, 1);
 getData(latestFeed, renderLatestStories, 2);
 getData(popularFeed, renderPopularStories, 8);
+
+
+// format articles for templates
+function newArticles(article) {
+	let newArticle = {};
+	let oldDate = article.pubDate;
+
+	newArticle.title = article.title;
+	newArticle.categories = article.categories;
+	newArticle.link = article.link;
+	newArticle.thumbnail = article.thumbnail;
+	newArticle.enclosure = article.enclosure
+
+
+	newArticle.content = article.content;
+	newArticle.date = date = moment(oldDate).format('MMMM d YYYY');
+
+	console.log(newArticle)
+}
 
 
 // render articles
