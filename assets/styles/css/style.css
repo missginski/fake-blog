@@ -1,13 +1,12 @@
-body {
+/* body {
 	background-color: #fff;
 	font-family: Montserrat, sans-serif;
 	font-size: 18px;
-	/*font-weight: 100;*/
 }
 .site-wrapper {
 	max-width: 1920px;
 	margin: 0 auto;
-}
+} */
 .my-container {
 	height: 100%;
 	margin: auto;

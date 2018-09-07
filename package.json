@@ -1,7 +1,6 @@
 {
   "name": "fake_blog",
   "version": "1.0.0",
-  "description": "",
   "main": "script.js",
   "scripts": {
     "test": "echo \"No tests\" && exit 0"
@@ -15,5 +14,11 @@
   "bugs": {
     "url": "https://github.com/missginski/fake-blog/issues"
   },
-  "homepage": "https://github.com/missginski/fake-blog#readme"
+  "homepage": "https://github.com/missginski/fake-blog#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {},
+  "description": ""
 }
