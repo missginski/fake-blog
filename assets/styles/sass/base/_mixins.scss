@@ -1,17 +1,41 @@
-@define-mixin atSmall {
-	@media (min-width: 480px) {
-		@mixin-content;
+// $screen-sm-min: 576px;
+// $screen-md-min: 768px;
+// $screen-lg-min: 992px;
+// $screen-xl-min: 1200px;
+// $screen-xxl-min: 1440px;
+
+@mixin xs {
+	@media (min-width: #{$screen-xs-min}) {
+	  @content;
 	}
 }
 
-@define-mixin atMedium {
-	@media (min-width: 768px) {
-		@mixin-content;
+@mixin sm {
+	@media (min-width: #{$screen-sm-min}) {
+	  @content;
 	}
 }
 
-@define-mixin atLarge {
-	@media (min-width: 1024px) {
-		@mixin-content;
+@mixin md {
+	@media (min-width: #{$screen-md-min}) {
+	  @content;
+	}
+}
+
+@mixin lg {
+	@media (min-width: #{$screen-lg-min}) {
+	  @content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: #{$screen-xl-min}) {
+	  @content;
+	}
+}
+
+@mixin xxl {
+	@media (min-width: #{$screen-xxl-min}) {
+	  @content;
 	}
 }

@@ -1,14 +1,37 @@
 body {
-	background-color: #fff;
+	background-color: $white;
 	font-family: Montserrat, sans-serif;
 	font-size: 18px;
 }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .site-wrapper {
 	max-width: 1920px;
-	margin: 0 auto;
-}
-.my-container {
-	height: 100%;
-	margin: auto;
 	padding: .5rem;
+	// max-width: 300px;
+	margin: 0 auto;
+
+	// @include sm {
+	// 		max-width: 460px;
+	// 	}
+	//
+	// @include md {
+	// 		max-width: 748px;
+	// 	}
+	//
+	// @include lg {
+	// 		max-width: 980px;
+	// 	}
+	//
+	// @include xl {
+	// 		max-width: 1300px;
+	// 	}
+	//
+	// @include xxl {
+	// 		max-width: 1920px;
+	// 	}
 }
