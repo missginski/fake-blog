@@ -1,0 +1,55 @@
+.my-container {
+	margin: auto;
+	padding: .5rem;
+
+	@include lg {
+		padding: 1.875rem
+	}
+
+	@include xxl {
+		max-width: 1920px;
+	}
+
+}
+
+.nav-logo {
+	width: 135px;
+	vertical-align: baseline;
+
+	@include sm {
+		width: 200px;
+		vertical-align: middle;
+	}
+
+}
+
+.navbar {
+	color: $mdGrey;
+	padding: 1.25rem 2.5rem;
+	margin-top: -2.5rem;
+}
+
+.navbar-toggler {
+	margin-left: auto;
+	margin-top: -2.375rem;
+}
+
+.nav-link.main-nav:hover,
+.nav-link.main-nav:active,
+.social-icon:hover {
+	color: $pink !important;
+}
+
+
+.nav-link  {
+	text-align: right;
+
+	@include lg {
+		text-align: center;
+	}
+
+}
+
+.social-icon {
+	color: $ltGrey;
+}
