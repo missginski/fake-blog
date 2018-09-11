@@ -1,0 +1,25 @@
+.card,
+.slide,
+.card-img,
+.card-img-overlay {
+	border-radius: 0;
+	border: none;
+}
+
+.card-img-overlay {
+	top: auto;
+	bottom: 0;
+}
+.card-img-overlay a {
+	font-size: 1.5em;
+	line-height: 1.15;
+	overflow: hidden;
+}
+
+.source-info {
+	text-transform: uppercase;
+	font-size: .75rem;
+	text-align: left;
+	color: #ffffff;
+	padding-top: 1.5rem;
+}

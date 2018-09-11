@@ -1,15 +1,14 @@
-.my-container {
+.container--top {
 	margin: auto;
 	padding: .5rem;
 
-	@include lg {
-		padding: 1.875rem
+	@include md {
+		padding: 1.875rem 1.875rem 0 1.875rem;
 	}
 
-	@include xxl {
+	@include lg {
 		max-width: 1920px;
 	}
-
 }
 
 .nav-logo {
@@ -20,7 +19,6 @@
 		width: 200px;
 		vertical-align: middle;
 	}
-
 }
 
 .navbar {
@@ -40,14 +38,12 @@
 	color: $pink !important;
 }
 
-
 .nav-link  {
 	text-align: right;
 
 	@include lg {
 		text-align: center;
 	}
-
 }
 
 .social-icon {
