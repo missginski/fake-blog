@@ -225,10 +225,6 @@ section {
 	padding: 0;
 }
 
-
-
-
-
 .bg-gradient::after {
 	content: "";
 	display: block;

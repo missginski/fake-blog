@@ -20,7 +20,8 @@
 
 .aside__card {
 	width: 410px;
-	height: 290px;
+	// height: 290px;
+	height: auto;
 
 	&:first-child {
 		padding-bottom: 0.625rem;
