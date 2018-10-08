@@ -70,11 +70,6 @@ hr {
   top: auto;
   bottom: 0; }
 
-.card-img-overlay a {
-  font-size: 1.5em;
-  line-height: 1.15;
-  overflow: hidden; }
-
 .source-info {
   text-transform: uppercase;
   font-size: .75rem;
@@ -89,23 +84,49 @@ hr {
 
 .carousel-item {
   max-width: 940px;
-  height: 589px; }
+  height: auto; }
 
 .carousel-caption {
   top: auto;
   bottom: 10%;
   text-align: left; }
   .carousel-caption__source-info {
-    padding-top: 3.375rem; }
+    padding-top: 3.375rem;
+    text-transform: uppercase; }
   .carousel-caption__link {
-    font-size: 2.25em;
+    font-size: 1.5rem;
     line-height: 1.15; }
+    @media (min-width: 992px) {
+      .carousel-caption__link {
+        font-size: 2.25rem; } }
+
+@media (min-width: 768px) {
+  #aside {
+    padding-left: 0; } }
 
 .aside__card {
-  width: 410px;
-  height: 290px; }
+  max-width: 410px;
+  height: auto; }
   .aside__card:first-child {
     padding-bottom: 0.625rem; }
+
+.aside__link {
+  font-size: 1.125rem;
+  line-height: 1.15; }
+  @media (min-width: 768px) {
+    .aside__link {
+      font-size: .875rem; } }
+  @media (min-width: 992px) {
+    .aside__link {
+      font-size: 1rem; } }
+  @media (min-width: 1200px) {
+    .aside__link {
+      font-size: 1.5rem; } }
+
+.aside__source-info {
+  text-transform: uppercase;
+  font-size: .875rem;
+  padding-top: .875rem; }
 
 .bg-gradient::after {
   content: "";

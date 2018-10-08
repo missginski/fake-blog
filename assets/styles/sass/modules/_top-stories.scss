@@ -1,6 +1,6 @@
 .carousel-item {
 	max-width: 940px;
-	height: 589px;
+	height: auto;
 }
 
 .carousel-caption {
@@ -10,26 +10,60 @@
 
 	&__source-info {
 		padding-top: 3.375rem;
+		text-transform: uppercase;
 	}
 
 	&__link {
-		font-size: 2.25em;
+		font-size: 1.5rem;
 		line-height: 1.15;
+
+		@include lg {
+			font-size: 2.25rem;
+		}
 	}
 }
 
-.aside__card {
-	width: 410px;
-	// height: 290px;
-	height: auto;
-
-	&:first-child {
-		padding-bottom: 0.625rem;
+#aside {
+	@include md {
+		padding-left: 0;
 	}
 }
 
-//styling for text in media queries
-//sizing for images. include media queries
+.aside {
+	&__card {
+		max-width: 410px;
+		height: auto;
+
+		&:first-child {
+			padding-bottom: 0.625rem;
+		}
+	}
+
+	&__link {
+		font-size: 1.125rem;
+		line-height: 1.15;
+
+		@include md {
+			font-size: .875rem;
+		}
+
+		@include lg {
+			font-size: 1rem;
+		}
+
+		@include xl {
+			font-size: 1.5rem;
+		}
+	}
+
+	&__source-info {
+		text-transform: uppercase;
+		font-size: .875rem;
+		padding-top: .875rem;
+	}
+}
+
+
 
 // background gradient styling
 .bg-gradient::after {
