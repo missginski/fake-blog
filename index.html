@@ -91,20 +91,18 @@
 </div>
 
 <div class="site-wrapper">
-	<hr>
+	<hr class="hr__top">
 	<script id="carousel-tmpl" type="text/template">
 		{{#.}}
-		<!-- <div class="carousel-item__wrapper"> -->
-			<div class="carousel-item">
-				<div class="img-overlay bg-gradient">
-					<img src="{{enclosure.link}}" class="img-fluid">
-					<div class="carousel-caption">
-						<a href="{{link}}" class="card-title text-white carousel-caption__link">{{title}}</a>
-						<p class="carousel-caption__source-info">{{categories.0}} &emsp; / &emsp; {{date}}</p>
-					</div>
+		<div class="carousel-item">
+			<div class="img-overlay bg-gradient">
+				<img src="{{enclosure.link}}" class="img-fluid">
+				<div class="carousel-caption">
+					<a href="{{link}}" class="card-title text-white carousel-caption__link">{{title}}</a>
+					<p class="carousel-caption__source-info">{{categories.0}} &emsp; / &emsp; {{date}}</p>
 				</div>
 			</div>
-		<!-- </div> -->
+		</div>
 		{{/.}}
 	</script>
 
@@ -131,35 +129,40 @@
 				<img class="card-img img-fluid" src="{{thumbnail}}">
 				<div class="card-img-overlay aside__overlay">
 					<a href="{{link}}" class="text-white card-title aside__link">{{title}}</a>
-					<!-- <p class="source-info">Music  /   August 21 2017</p> -->
 					<p class="aside__source-info">{{categories.0}} &emsp; / &emsp; {{date}}</p>
 				</div>
 			</div>
 		</div>
 		{{/.}}
 	</script>
+</div>
 
 	<section class="latest-stories page-section">
-		<div class="container-fluid main-container col-md-12">
-			<h2 class="section-title page-section__title">Latest Stories</h2>
-			<div class="card-deck">
-				<div id="latest" class="row"></div>
+		<div class="site-wrapper">
+			<div class="container-fluid main-container col-md-12">
+				<h2 class="section-title page-section__title">Latest Stories</h2>
+				<hr class="hr__pink" />
+				<div class="card-deck">
+					<div id="latest" class="row"></div>
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<script id="latest-tmpl" type="text/template">
 		{{#.}}
-		<div class="col-md-4">
+		<div class="col-md-4 latest-stories__col">
 			<div class="card h-100">
 				<a href="{{link}}">
-					<img class="card-img-top img-fluid" src="{{thumbnail}}">
+					<div class="latest-stories__card-img-top">
+						<img class="card-img-top img-fluid" src="{{thumbnail}}">
+					</div>
 				</a>
 				<div class="card-body">
-					<h5 class="card-title">{{title}}</h5>
+					<h5 class="card-title latest-stories__card-title">{{title}}</h5>
 					<div class="card-text-wrapper">
 						<!-- <p class="card-text">{{content}}</p> -->
-						<p>
+						<p class="card-text latest-stories__card-text">
 							Asymmetrical sint tempor, cronut pariatur pug semiotics iPhone cliche humblebrag keytar. Post-ironic glossier mlkshk slow-carb skateboard qui marfa venmo shabby chic.
 						</p>
 					</div>
@@ -195,7 +198,7 @@
 	<section class="subscribe-form">
 
 	</section>
-	</div>
+	<!-- </div>  -->
 	<footer>
 
 	</footer>

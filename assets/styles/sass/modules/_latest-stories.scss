@@ -1,0 +1,12 @@
+.latest-stories {
+	background-color: $bgGrey;
+	padding-bottom: 7rem;
+
+	&__col {
+		padding: 0;
+	}
+
+	&__card-text {
+		padding-bottom: 2rem;
+	}
+}

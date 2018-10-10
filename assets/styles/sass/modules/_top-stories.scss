@@ -31,7 +31,7 @@
 
 .aside {
 	&__card {
-		max-width: 410px;
+		max-width: 450px;
 		height: auto;
 
 		&:first-child {
@@ -40,30 +40,30 @@
 	}
 
 	&__link {
-		font-size: 1.125rem;
-		line-height: 1.15;
-
-		@include md {
-			font-size: .875rem;
-		}
+		font-size: .875rem;
+		line-height: 1.0;
 
 		@include lg {
 			font-size: 1rem;
+			line-height: 1.15;
 		}
 
 		@include xl {
 			font-size: 1.5rem;
+			line-height: 1.15;
 		}
 	}
 
 	&__source-info {
 		text-transform: uppercase;
-		font-size: .875rem;
+		font-size: .625rem;
 		padding-top: .875rem;
+
+		@include lg {
+			font-size: .875rem;
+		}
 	}
 }
-
-
 
 // background gradient styling
 .bg-gradient::after {
@@ -76,10 +76,6 @@
 	left: 0;
 	background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, 0.3));
 	z-index: 0;
-}
-
-.bg-gradient {
-	position: relative;
 }
 
 .bg-gradient > * {

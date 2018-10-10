@@ -1,7 +1,20 @@
 .page-section {
-	margin-bottom: 5.875rem;
+	margin-bottom: 8.125rem;
 
 	&__title {
-		margin-bottom: 4.5rem;
+		position: relative;
+		top: -3.125rem;
+		left: -1rem;
 	}
+}
+
+.hr__pink {
+	background-color: #f78181;
+  width: 80px;
+  height: 2px;
+  text-align: left;
+  position: relative;
+  margin: 0;
+  top: -2.975rem;
+	left: -1rem;
 }

@@ -15,7 +15,6 @@ function getData(feedurl, handler, val) {
 			let articles = response.items;
 			let myArticles = [];
 			$.each(articles, function(i, article) {
-				// newArticles(article)
 				let newArticle = {};
 				let oldDate = article.pubDate;
 
@@ -24,13 +23,8 @@ function getData(feedurl, handler, val) {
 				newArticle.link = article.link;
 				newArticle.thumbnail = article.thumbnail;
 				newArticle.enclosure = article.enclosure
-
-
 				newArticle.content = article.content;
 				newArticle.date = date = moment(oldDate).format('MMMM d YYYY');
-
-				// console.log(newArticle)
-
 
 				myArticles.push(newArticle);
 				if ( i === val ) {
@@ -77,22 +71,3 @@ function renderPopularStories(myArticles) {
 	let rendered = Mustache.render(template, myArticles);
 	$('#popular-stories').html(rendered);
 }
-
-
-// format articles for templates
-// function newArticles(article) {
-// 	let newArticle = {};
-// 	let oldDate = article.pubDate;
-//
-// 	newArticle.title = article.title;
-// 	newArticle.categories = article.categories;
-// 	newArticle.link = article.link;
-// 	newArticle.thumbnail = article.thumbnail;
-// 	newArticle.enclosure = article.enclosure
-//
-//
-// 	newArticle.content = article.content;
-// 	newArticle.date = date = moment(oldDate).format('MMMM d YYYY');
-//
-// 	console.log(newArticle)
-// }
