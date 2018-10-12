@@ -69,5 +69,5 @@ function renderLatestStories(myArticles) {
 function renderPopularStories(myArticles) {
 	let template = $('#popular-tmpl').html();
 	let rendered = Mustache.render(template, myArticles);
-	$('#popular-stories').html(rendered);
+	$('#popular').html(rendered);
 }
