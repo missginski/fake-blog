@@ -1,8 +1,11 @@
 const api_key = config.API_KEY;
-const carouselFeed = 'https://greatist.com/feed';
+// const carouselFeed = 'https://greatist.com/feed';
+const carouselFeed = 'https://thoughtcatalog.com/feed/';
 const asideFeed = 'https://thoughtcatalog.com/feed/';
 const latestFeed = 'https://tinybuddha.com/feed/';
-const popularFeed = 'http://www.byrdie.com/rss';
+// const popularFeed = 'http://www.byrdie.com/rss';
+const popularFeed = 'https://tinybuddha.com/feed/';
+
 
 // get article data
 function getData(feedurl, handler, val) {
